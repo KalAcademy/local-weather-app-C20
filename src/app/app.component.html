@@ -1,8 +1,15 @@
 <div style="text-align: center">
-  <h1>
-    Local Weather
-  </h1>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      Local Weather
+    </mat-toolbar-row>
+  </mat-toolbar>
   <div>Your city, your forecast, right now!</div>
+  <br />
+  <div>
+    <app-city-search></app-city-search>
+  </div>
+  <br />
   <h2>Current Weather</h2>
   <app-current-weather />
 </div>
