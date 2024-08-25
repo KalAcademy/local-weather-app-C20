@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ICurrentWeather } from '../icurrent-weather';
 import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
-import { WeatherService } from '../weather.service';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -12,7 +11,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './current-weather.component.css'
 })
 export class CurrentWeatherComponent {
-  current: ICurrentWeather = {
+  @Input() current: ICurrentWeather = {
     city: '',
     country: '',
     date: new Date(),
@@ -21,7 +20,4 @@ export class CurrentWeatherComponent {
     description: ''
   }
 
-  constructor(private weatherService: WeatherService){
-    this.weatherService.getCurrentWeather('Venice','IT').subscribe(data => this.current = data)
-  }
 }
